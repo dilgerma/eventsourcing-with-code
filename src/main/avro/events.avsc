@@ -1,0 +1,231 @@
+[
+  // board
+  {
+    "type": "record",
+    "name": "GoalAdded",
+    "namespace": "de.nebulit.events.additem",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "itemId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "description",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "SchedulePlanned",
+    "namespace": "de.nebulit.events.blocktime",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "durationInMinutes",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "TaskPlanned",
+    "namespace": "de.nebulit.events.schedule",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "itemId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "points",
+        "type": "int"
+      },
+      {
+        "name": "durationInMinutes",
+        "type": "int"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "starttime",
+        "type": {
+          "type": "int",
+          "logicalType": "time-millis"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "ScheduleStarted",
+    "namespace": "de.nebulit.events.schedule",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "durationInMinutes",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "ScheduleFinished",
+    "namespace": "de.nebulit.events.finishtask",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "TaskScheduled",
+    "namespace": "de.nebulit.events.itemscheduler",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "itemId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "TaskDiscarded",
+    "namespace": "de.nebulit.events.itemscheduler",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "itemId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "TaskFinished",
+    "namespace": "de.nebulit.events.finishgoal",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "itemId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "TaskPrepared",
+    "namespace": "de.nebulit.events.finishgoal",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "taskId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "starttime",
+        "type": {
+          "type": "int",
+          "logicalType": "time-millis"
+        }
+      },
+      {
+        "name": "points",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "ChallengeStarted",
+    "namespace": "de.nebulit.events.challengestart",
+    "fields": [
+      {
+        "name": "aggregateId",
+        "type": {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      }
+    ]
+  }
+]
